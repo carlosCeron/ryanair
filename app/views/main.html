@@ -1,0 +1,101 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-body">
+          <h2>Cheap Flip  Finder:</h2>
+        <hr>
+        <form action="">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>Origin</label>
+                <input type="text" ng-model="ori_des.origin" placeholder="Custom template" uib-typeahead="c as c.name for c in countries | filter:{name:$viewValue}" class="form-control" typeahead-show-hint="true" typeahead-min-length="0">
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>Destination</label>
+                <input type="text" ng-model="ori_des.destination" placeholder="Custom template" uib-typeahead="c as c.name for c in countries | filter:{name:$viewValue}" class="form-control" typeahead-show-hint="true" typeahead-min-length="0">
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>Date:</label>
+                <input date-range-picker class="form-control date-picker" type="text" ng-model="date_range" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+              <button class="btn btn-danger btn-block" ng-click="limpiar()"><i class="fa fa-remove"></i> Limpiar</button>
+            </div>
+            <div class="col-md-4">
+              <button class="btn btn-success btn-block" ng-click="consultar()"><i class="fa fa-plane"></i> Consultar</button>
+            </div>
+          </div>
+        </form>
+        <hr>
+        <div class="row" ng-if="showflight">
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-12">
+                  <i class="fa fa-plane fa-3x"></i> <h1>Flights Find</h1>
+                </div>
+              </div>
+              <hr>
+              <div ng-repeat="flight in flight.flights">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="row">
+                      <div class="col-md-6"><i class="fa fa-fighter-jet"></i> <span class="font-flight">Airpot From:</span></div>
+                      <div class="col-md-6">{{flight.outbound.airportFrom.name}}</div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="row">
+                      <div class="col-md-6"><i class="fa fa-fighter-jet"></i> <span class="font-flight">Airpot To:</span></div>
+                      <div class="col-md-6">{{flight.outbound.airportTo.name}}</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="row">
+                      <div class="col-md-6"><i class="fa fa-clock-o"></i> <span class="font-flight">From:</span></div>
+                      <div class="col-md-6">{{flight.outbound.dateFrom | date: 'medium'}}</div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="row">
+                      <div class="col-md-6"><i class="fa fa-clock-o"></i> <span class="font-flight">To:</span></div>
+                      <div class="col-md-6">{{flight.outbound.dateTo | date: 'medium'}}</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <i class="fa fa-money"></i> <span class="font-flight">{{flight.outbound.price.value}} {{flight.outbound.price.currencySymbol}} </span>
+                  </div>
+                  <div class="col-md-4"></div>
+                  <div class="col-md-2"></div>
+                  <div class="col-md-2">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                  </div>
+                  <div class="col-md-4"></div>
+                  <div class="col-md-2"></div>
+                  <div class="col-md-2">
+                    <button class="btn btn-success btn-block"><i class="fa fa-shopping-cart"></i> Add</button>
+                  </div>
+                </div>
+                <hr>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
