@@ -1,14 +1,14 @@
 # ryanair - Carlos Ceron , carlos.ceron.1986@gmail.com
 
-Primer Paso:
-Tener 
+-Primer Paso:
+    Tener 
 	Instalado Node, NPM
-Segundo paso:
-correr:
+-Segundo paso:
+    correr:
 	 npm install
-Finalmente corremos:
+-Finalmente corremos:
 	bower install
 
-para iniciar el servidor 
-corremos: 
-	grunt server
+-para iniciar el servidor 
+    corremos: 
+	    grunt server
